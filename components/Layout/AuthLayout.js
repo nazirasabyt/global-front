@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const AuthLayout = ({ children }) => {
   return (
-    <div className='flex h-screen bg-white '>
+    <div className='flex h-screen bg-white overflow-hidden'>
       <div className='m-auto sm:w-3/4 h-3/4 grid lg:grid-cols-2 lg:gap-20 '>
         <div className=' flex flex-col   '>
           <Link href='/' className='hidden lg:block ml-10 mb-20'>

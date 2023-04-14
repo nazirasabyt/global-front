@@ -6,8 +6,6 @@ import { MdOutlineAirlineSeatReclineExtra } from "react-icons/md";
 import { BsFacebook } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillApple } from "react-icons/ai";
-import { TfiLayoutLineSolid } from "react-icons/tfi";
-import { useRouter } from "next/router";
 import axios from "axios";
 import { toast } from "react-toastify";
 import UseAuthContext from "../../hooks/useAuthContext";
@@ -43,10 +41,10 @@ const ViewDetails = ({ flight }) => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:1337/api/auth/local",
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/auth/local`,
         userData
       );
-      console.log(data);
+
       if (data.jwt) {
         toast.success("Login Successful!");
         authLogin(data);
@@ -61,8 +59,6 @@ const ViewDetails = ({ flight }) => {
 
   return (
     <div className='flex flex-col lg:flex-row mx-auto justify-between gap-10 w-[380px] sm:w-full'>
-      {/* <p>Turkey - Istanbul</p> */}
-
       <div className='flex flex-col gap-10'>
         <div className='flex flex-col w-full h-full lg:w-[790px] sm:h-[349px] bg-white rounded-lg shadow-lg p-8 sm:gap-4'>
           <div className='flex justify-between'>

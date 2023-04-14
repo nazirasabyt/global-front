@@ -20,38 +20,41 @@ const ForgotPassword = () => {
   };
   return (
     <div className=' w-full mx-auto flex flex-col '>
-      <h1 className='text-2xl sm:text-4xl font-semibold mb-4'>
+      <h1 className='text-2xl sm:text-4xl font-semibold mb-4 text-center'>
         Forgot Password
       </h1>
-      <p className='text-sm text-gray-primary'>Enter your email to reset.</p>
-      <div className='mt-5'>
-        <form className='flex flex-col gap-5 relative' onSubmit={handleSubmit}>
-          <div>
-            <input
-              placeholder='Type your email'
-              className='border rounded-md h-12 sm:h-14 w-[300px] sm:w-full px-3  focus:outline-none '
-              name='email'
-              type='email'
-              onChange={(e) => handleEmail(e)}
-            />
-          </div>
+      <p className='text-sm text-gray-primary text-center'>
+        Enter your email to reset.
+      </p>
 
-          <div className='flex flex-col gap-3'>
-            <button
-              type='submit'
-              className='bg-brand-clr h-10 sm:h-14 rounded-md w-full'>
-              Reset Password
-            </button>
-            <p className='text-center text-xs sm:text-sm'>
-              or
-              <Link href='/login' className='text-salmon-clr'>
-                {" "}
-                Login
-              </Link>
-            </p>
-          </div>
-        </form>
-      </div>
+      <form
+        className='flex flex-col gap-5 relative w-[300px] mx-auto mt-5'
+        onSubmit={handleSubmit}>
+        <div>
+          <input
+            placeholder='Type your email'
+            className='border rounded-md h-12 sm:h-14 w-[300px] sm:w-full px-3  focus:outline-none '
+            name='email'
+            type='email'
+            onChange={(e) => handleEmail(e)}
+          />
+        </div>
+
+        <div className='flex flex-col gap-3 w-full mx-auto'>
+          <button
+            type='submit'
+            className='bg-brand-clr h-10 sm:h-14 rounded-md w-full'>
+            Reset Password
+          </button>
+          <p className='text-center text-xs sm:text-sm'>
+            or
+            <Link href='/login' className='text-salmon-clr'>
+              {" "}
+              Login
+            </Link>
+          </p>
+        </div>
+      </form>
     </div>
   );
 };

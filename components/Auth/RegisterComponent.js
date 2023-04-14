@@ -42,7 +42,7 @@ const RegisterComponent = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:1337/api/auth/local/register",
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/auth/local/register`,
         user
       );
       console.log(data);
@@ -63,7 +63,7 @@ const RegisterComponent = () => {
     <div className=' w-full h-screen mx-auto flex flex-col px-10 '>
       <h1 className='text-4xl font-semibold mb-4'>Sign up</h1>
       <p className='text-sm text-gray-primary '>
-        Let’s get you all st up so you can access your personal account.
+        Let’s get you all set up so you can access your personal account.
       </p>
       <div className='mt-10'>
         <form
@@ -135,7 +135,9 @@ const RegisterComponent = () => {
             </p>
           </div>
           <div className='flex flex-col gap-3'>
-            <button className='bg-[#8DD3BB] h-14 rounded-md' type='submit'>
+            <button
+              className='bg-[#8DD3BB] h-14 rounded-md  flex justify-center items-center'
+              type='submit'>
               {loading ? <AiOutlineSync /> : "Create account"}
             </button>
 
@@ -148,7 +150,7 @@ const RegisterComponent = () => {
             </p>
           </div>
         </form>
-        <p className='text-center text-gray-primary text-xs opacity-50 my-8'>
+        {/* <p className='text-center text-gray-primary text-xs opacity-50 my-8'>
           Or Sign up with
         </p>
         <div className=' flex flex-row gap-4 justify-center'>
@@ -161,7 +163,7 @@ const RegisterComponent = () => {
           <button className='py-4 px-6 border border-brand-clr lg:w-[160px] h-[56px] flex justify-center'>
             <AiFillApple size={21} />
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

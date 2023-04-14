@@ -27,24 +27,13 @@ const LoginComponent = () => {
     });
   };
 
-  const handleChechbox = (e) => {
-    if (localStorage.user && localStorage.user !== "") {
-      setUser((user) => ({
-        ...user,
-        rememberPassword: false,
-      }));
-    } else {
-      setUser((user) => ({
-        ...user,
-        rememberPassword: true,
-      }));
-      localStorage.setItem("user", user);
-    }
+  const handleChechbox = () => {
+    setUser((user) => !user.rememberPassword);
+    localStorage.setItem("user", user);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(user);
 
     try {
       const { data } = await axios.post(
@@ -66,7 +55,7 @@ const LoginComponent = () => {
   };
 
   return (
-    <div className=' w-full mx-auto flex flex-col px-10'>
+    <div className=' w-full mx-auto flex flex-col sm:px-10'>
       <h1 className='text-4xl font-semibold mb-4'>Login</h1>
       <p className='text-sm text-gray-primary'>Login to access your account</p>
       <div className='mt-10'>
@@ -117,7 +106,7 @@ const LoginComponent = () => {
                 name='rememberPassword'
                 className='cursor-pointer mr-1'
                 checked={user.rememberPassword}
-                onChange={handleChechbox}
+                onChange={() => handleChechbox()}
               />
               <p>Remember me</p>
             </div>
@@ -143,7 +132,7 @@ const LoginComponent = () => {
             </p>
           </div>
         </form>
-        <p className='text-center text-gray-primary text-xs opacity-50 my-8'>
+        {/* <p className='text-center text-gray-primary text-xs opacity-50 my-8'>
           Or login with
         </p>
         <div className=' flex gap-4 justify-center items-center '>
@@ -158,7 +147,7 @@ const LoginComponent = () => {
             className='py-4 px-6 border border-brand-clr sm:w-[160px] sm:h-[56px] flex justify-center'>
             <AiFillApple size={21} />
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

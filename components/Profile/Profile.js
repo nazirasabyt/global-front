@@ -98,7 +98,7 @@ const Profile = () => {
               <form
                 onSubmit={handleSubmit}
                 className='flex flex-col gap-4 mt-8'>
-                <div className='flex justify-between'>
+                <div className='flex justify-between '>
                   <label className='flex flex-col'>
                     <span className='text-primary-gray opacity-70 text-sm'>
                       Name
@@ -112,8 +112,13 @@ const Profile = () => {
                       name='firstName'
                     />
                   </label>
-                  <button className='flex items-center gap-1 border-brand-clr py-2 px-4 rounded-lg w-[140px]'>
-                    <RiEditCircleFill /> Change
+                  <button className='flex items-center gap-1 '>
+                    <span
+                      className='hidden sm:block
+                    '>
+                      Change
+                    </span>
+                    <RiEditCircleFill />{" "}
                   </button>
                 </div>
                 <div className='flex justify-between'>
@@ -130,8 +135,13 @@ const Profile = () => {
                       className='text-lg font-medium py-1'
                     />
                   </label>
-                  <button className='flex items-center gap-1 border-brand-clr py-2 px-4 rounded-lg w-[140px]'>
-                    <RiEditCircleFill /> Change
+                  <button className='flex items-center gap-1'>
+                    <span
+                      className='hidden sm:block
+                    '>
+                      Change
+                    </span>
+                    <RiEditCircleFill />
                   </button>
                 </div>
                 <div className='flex justify-between'>
@@ -147,8 +157,13 @@ const Profile = () => {
                       className='text-lg font-medium py-1'
                     />
                   </label>
-                  <button className='flex items-center gap-1 border-brand-clr py-2 px-4 rounded-lg w-[140px]'>
-                    <RiEditCircleFill /> Change
+                  <button className='flex items-center gap-1'>
+                    <span
+                      className='hidden sm:block
+                    '>
+                      Change
+                    </span>
+                    <RiEditCircleFill />{" "}
                   </button>
                 </div>
 
@@ -166,8 +181,13 @@ const Profile = () => {
                       className='text-lg font-medium py-1'
                     />
                   </label>
-                  <button className='flex items-center gap-1 border-brand-clr py-2 px-4 rounded-lg w-[140px]'>
-                    <RiEditCircleFill /> Change
+                  <button className='flex items-center gap-1'>
+                    <span
+                      className='hidden sm:block
+                    '>
+                      Change
+                    </span>
+                    <RiEditCircleFill />{" "}
                   </button>
                 </div>
                 <div className='flex justify-between'>
@@ -184,8 +204,13 @@ const Profile = () => {
                       className=' text-lg font-medium py-1'
                     />
                   </label>
-                  <button className='flex items-center gap-1 border-brand-clr py-2 px-4 rounded-lg w-[140px]'>
-                    <RiEditCircleFill /> Change
+                  <button className='flex items-center gap-1'>
+                    <span
+                      className='hidden sm:block
+                    '>
+                      Change
+                    </span>
+                    <RiEditCircleFill />{" "}
                   </button>
                 </div>
               </form>

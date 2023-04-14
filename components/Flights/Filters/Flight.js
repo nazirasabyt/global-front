@@ -75,9 +75,12 @@ const Flight = (props) => {
                   </h2>
                 </div>
                 <div className=' border-b-2 opacity-80 my-6 w-full'></div>
-                <button className='bg-brand-clr w-full h-12 rounded-md text-sm font-medium '>
-                  <Link href={`/flights/${item.id}`}>View Details</Link>
-                </button>
+
+                <Link href={`/flights/${item.id}`}>
+                  <button className='bg-brand-clr w-full h-12 rounded-md text-sm font-medium '>
+                    View Details{" "}
+                  </button>
+                </Link>
               </div>
               <p
                 className='hidden sm:flex flex-col 
