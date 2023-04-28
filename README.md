@@ -1,7 +1,7 @@
 # global-front
 
 Hi there 👋,
-This is a flight booking website , built with Next.js that showcases my Frontend and Backen skills.
+This is a flight booking website , built with Next.js that showcases my Frontend and Backend skills.
 
 Functionality: authentication, search and filter flights, responsive design, dynamic page routing and server side rendering
 
