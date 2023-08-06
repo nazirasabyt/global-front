@@ -60,3 +60,15 @@ export default async function fetcher(url, option = {}) {
   const data = await response.json();
   return data;
 }
+
+export const formatDate = (dateString) => {
+  let options = {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  };
+
+  let date = new Date(dateString);
+  return date.toLocaleString("en-US", options);
+};

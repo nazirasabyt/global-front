@@ -28,9 +28,9 @@ const Footer = () => {
     setEmail("");
   };
   return (
-    <footer className='relative '>
-      <section className='w-full h-full mt-20 relative'>
-        <div className='flex justify-between w-[85%] lg:w-[1232px]  mx-auto  rounded-3xl  bg-[#CDEAE1] absolute bottom-24 sm:bottom-44 inset-x-4'>
+    <footer className='relative mt-10'>
+      <section className='w-full h-full relative'>
+        <div className='flex justify-between   mx-6  rounded-3xl  bg-[#CDEAE1]  inset-x-4'>
           <div className='flex flex-col px-6 sm:px-16 mb-4'>
             <h1 className='text-xl sm:text-3xl my-2 sm:my-6  font-semibold pt-2'>
               Subscribe Newsletter
@@ -42,7 +42,7 @@ const Footer = () => {
             </p>
             <form
               onSubmit={handleSubmit}
-              className=' flex flex-col lg:flex-row gap-4  text-sm  sm:text-lg'>
+              className='flex flex-col lg:flex-row gap-4  text-sm  sm:text-lg'>
               <input
                 placeholder='Your email adress'
                 className='w-full lg:w-[500px] h-8 sm:h-12 lg:h-14 pl-2 rounded-md outline-none '
@@ -71,8 +71,8 @@ const Footer = () => {
             />
           </div>
         </div>
-        <div className=' flex flex-col justify-center  mx-auto w-full  cursor-pointer bg-brand-clr '>
-          <div className=' text-xs sm:text-lg flex p-4  justify-evenly  mt-36 sm:mt-[200px] sm:mx-16'>
+        <div className='flex flex-col justify-center  mx-auto w-full  cursor-pointer bg-brand-clr mt-6'>
+          <div className='text-xs sm:text-lg flex p-4 mt-8 justify-evenly   sm:mx-16'>
             {" "}
             <div className=' flex flex-col gap-1 justify-center '>
               {" "}

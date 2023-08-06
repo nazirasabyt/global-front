@@ -1,8 +1,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { BsFacebook, BsEyeSlashFill, BsEyeFill } from "react-icons/bs";
-import { FcGoogle } from "react-icons/fc";
-import { AiFillApple } from "react-icons/ai";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -11,11 +9,11 @@ import { AiOutlineSync } from "react-icons/ai";
 const RegisterComponent = () => {
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [agreeToTerms, setAgreeToTerms] = useState(false);
   const [user, setUser] = useState({
     username: "",
     email: "",
     password: "",
-    agree: false,
     image: "",
     phone: "",
   });
@@ -30,15 +28,18 @@ const RegisterComponent = () => {
   };
 
   const handleChechbox = (e) => {
-    setUser((user) => ({
-      ...user,
-      agree: true,
-    }));
+    setAgreeToTerms(e.target.checked);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
+    if (!agreeToTerms) {
+      return toast.error("You need to accept the terms!", {
+        hideProgressBar: true,
+      });
+    }
 
     try {
       const { data } = await axios.post(
@@ -126,7 +127,7 @@ const RegisterComponent = () => {
               type='checkbox'
               name='agree'
               id='agree'
-              checked={user.agree}
+              checked={agreeToTerms}
               onChange={handleChechbox}
               className='cursor-pointer mr-1'
             />
@@ -150,20 +151,6 @@ const RegisterComponent = () => {
             </p>
           </div>
         </form>
-        {/* <p className='text-center text-gray-primary text-xs opacity-50 my-8'>
-          Or Sign up with
-        </p>
-        <div className=' flex flex-row gap-4 justify-center'>
-          <button className='py-4 px-6 border border-brand-clr lg:w-[160px] h-[56px] flex justify-center '>
-            <BsFacebook className='text-blue-600 ' />
-          </button>
-          <button className='py-4 px-6 border border-brand-clr lg:w-[160px] h-[56px] flex justify-center'>
-            <FcGoogle size={21} />
-          </button>
-          <button className='py-4 px-6 border border-brand-clr lg:w-[160px] h-[56px] flex justify-center'>
-            <AiFillApple size={21} />
-          </button>
-        </div> */}
       </div>
     </div>
   );

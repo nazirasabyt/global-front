@@ -1,8 +1,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
-import { BsFacebook, BsEyeSlashFill, BsEyeFill } from "react-icons/bs";
-import { FcGoogle } from "react-icons/fc";
-import { AiFillApple } from "react-icons/ai";
+import { BsEyeSlashFill, BsEyeFill } from "react-icons/bs";
+import Image from "next/image";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -25,11 +24,6 @@ const LoginComponent = () => {
       ...user,
       [name]: value,
     });
-  };
-
-  const handleChechbox = () => {
-    setUser((user) => !user.rememberPassword);
-    localStorage.setItem("user", user);
   };
 
   const handleSubmit = async (e) => {
@@ -55,27 +49,27 @@ const LoginComponent = () => {
   };
 
   return (
-    <div className=' w-full mx-auto flex flex-col sm:px-10'>
-      <h1 className='text-4xl font-semibold mb-4'>Login</h1>
-      <p className='text-sm text-gray-primary'>Login to access your account</p>
+    <div className=' w-full mx-auto flex flex-col sm:px-10 mt-10'>
+      <h1 className='text-4xl font-semibold mb-4 '>Login</h1>
+      <p className='text-sm '>Login to access your account</p>
       <div className='mt-10'>
         <form
           className='flex flex-col gap-5 relative w-full'
           onSubmit={handleSubmit}>
           <div>
             <input
-              placeholder='Type your email'
-              className='border rounded-md h-14 w-full px-3  focus:outline-none  '
+              placeholder='Email'
+              className='border rounded-md h-14 w-full px-3  focus:outline-none'
               name='identifier'
-              type='email'
+              type='text'
               onChange={(e) => handleUser(e)}
               required
             />
           </div>
           <div className='relative'>
             <input
-              placeholder='Type your password'
-              className='border rounded-md h-14 w-full px-3  focus:outline-none  '
+              placeholder='Password'
+              className='border rounded-md h-14 w-full px-3  focus:outline-none'
               type={show ? "text" : "password"}
               name='password'
               onChange={(e) => handleUser(e)}
@@ -98,18 +92,6 @@ const LoginComponent = () => {
             </span>
           </div>
           <div className='flex justify-between mb-4'>
-            <div className='flex text-xs'>
-              {" "}
-              <input
-                type='checkbox'
-                id='rememberPassword'
-                name='rememberPassword'
-                className='cursor-pointer mr-1'
-                checked={user.rememberPassword}
-                onChange={() => handleChechbox()}
-              />
-              <p>Remember me</p>
-            </div>
             <Link
               href='/forgot-password'
               className=' flex-end text-xs text-salmon-clr cursor-pointer'>
@@ -119,10 +101,10 @@ const LoginComponent = () => {
           <div className='flex flex-col gap-3'>
             <button
               type='submit'
-              className='bg-brand-clr h-10 sm:h-14 rounded-md w-full'>
-              Login
+              className='bg-brand-clr h-12 sm:h-14 rounded-md w-full'>
+              Submit
             </button>
-            <ToastContainer />
+
             <p className='text-center text-xs'>
               Don’t have an account?
               <Link href='/register' className='text-salmon-clr'>
@@ -132,22 +114,6 @@ const LoginComponent = () => {
             </p>
           </div>
         </form>
-        {/* <p className='text-center text-gray-primary text-xs opacity-50 my-8'>
-          Or login with
-        </p>
-        <div className=' flex gap-4 justify-center items-center '>
-          <button className='py-4 px-6 border border-brand-clr sm:w-[160px] sm:h-[56px] flex justify-center '>
-            <BsFacebook className='text-blue-600 ' />
-          </button>
-          <button className='py-4 px-6 border border-brand-clr sm:w-[160px] sm:h-[56px] flex justify-center'>
-            <FcGoogle size={21} />
-          </button>
-          <button
-            disabled={true}
-            className='py-4 px-6 border border-brand-clr sm:w-[160px] sm:h-[56px] flex justify-center'>
-            <AiFillApple size={21} />
-          </button>
-        </div> */}
       </div>
     </div>
   );

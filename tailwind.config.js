@@ -12,6 +12,7 @@ module.exports = {
         "hero-pattern": "url('../public/img/hero.png')",
         "section-map": "url('../public/img/map.png')",
       },
+
       colors: {
         "brand-clr": "#8DD3BB",
         "salmon-clr": "#FF8682",
@@ -58,6 +59,14 @@ module.exports = {
       },
       zIndex: {
         100: "100",
+      },
+      screens: {
+        xs: "480px",
+        ss: "620px",
+        sm: "768px",
+        md: "1060px",
+        lg: "1200px",
+        xl: "1700px",
       },
     },
   },

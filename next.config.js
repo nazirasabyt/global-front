@@ -6,7 +6,15 @@ const nextConfig = {
     styledComponents: true,
   },
   images: {
-    domains: ["sheltered-reef-77249.herokuapp.com"],
+    domains: [process.env.NEXT_PUBLIC_STRAPI_URL],
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "127.0.0.1",
+        port: "1337",
+        pathname: "/uploads/**",
+      },
+    ],
   },
 };
 

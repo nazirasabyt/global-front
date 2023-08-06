@@ -4,17 +4,19 @@ import Link from "next/link";
 
 const Travel = () => {
   return (
-    <div className='hidden sm:flex flex-col w-[700px]  mx-auto lg:w-[1232px] h-[95vh] lg:h-[60vh] '>
-      <h2 className='text-4xl font-semibold mb-2 '>Fall into travel</h2>
-      <p className=' '>
+    <div className='flex flex-col w-full mx-auto'>
+      <h2 className='text-xl sm:text-4xl font-semibold mb-2 mx-6'>
+        Fall into travel
+      </h2>
+      <p className='mx-6'>
         Going somewhere to celebrate this season? Whether you’re going home or
         somewhere to roam, we’ve got the travel tools to get you to your
         destination.
       </p>
       <div className='flex flex-col lg:flex-row gap-8 mt-8 justify-center items-center'>
-        <div className='w-[690px] lg:w-[552px] bg-brand-clr sm:rounded-lg p-6'>
+        <div className='w-full lg:w-[552px] bg-brand-clr sm:rounded-lg p-6'>
           <div className='flex justify-between mb-6'>
-            <h1 className='text-4xl font-semibold'>
+            <h1 className='text-2xl sm:text-4xl font-semibold'>
               Backpacking <br /> Sri Lanka
             </h1>
             <button className='flex flex-col p-2 bg-white rounded-lg text-sm '>
@@ -35,7 +37,7 @@ const Travel = () => {
             Book Flight
           </Link>
         </div>
-        <div className='grid grid-cols-2  gap-4'>
+        <div className='grid grid-cols-2 gap-4'>
           <Image
             src='/img/travel1.png'
             width={318}

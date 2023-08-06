@@ -8,10 +8,13 @@ import { FcGoogle } from "react-icons/fc";
 import { AiFillApple } from "react-icons/ai";
 import axios from "axios";
 import { toast } from "react-toastify";
-import UseAuthContext from "../../hooks/useAuthContext";
+import UseAuthContext from "../../../hooks/useAuthContext";
 import Payment from "./Payments/Payment";
+import { formatDate, getLocalStoragePax } from "../../../utils/helpers";
 
 const ViewDetails = ({ flight }) => {
+  const [date, setDate] = useState();
+
   const [userData, setUserData] = useState({
     identifier: "",
     password: "",
@@ -20,6 +23,15 @@ const ViewDetails = ({ flight }) => {
     user: "",
     token: "",
   });
+
+  useEffect(() => {
+    const searchedFlight = getLocalStoragePax();
+
+    if (searchedFlight.departure) {
+      const formattedDate = formatDate(searchedFlight.departure);
+      setDate(formattedDate);
+    }
+  }, []);
 
   const { auth, authLogin } = UseAuthContext();
 
@@ -58,7 +70,7 @@ const ViewDetails = ({ flight }) => {
   };
 
   return (
-    <div className='flex flex-col lg:flex-row mx-auto justify-between gap-10 w-[380px] sm:w-full'>
+    <div className='flex flex-col lg:flex-row mx-auto justify-between gap-10 w-[90%] lg:w-full'>
       <div className='flex flex-col gap-10'>
         <div className='flex flex-col w-full h-full lg:w-[790px] sm:h-[349px] bg-white rounded-lg shadow-lg p-8 sm:gap-4'>
           <div className='flex justify-between'>
@@ -68,15 +80,15 @@ const ViewDetails = ({ flight }) => {
             </h2>
           </div>
           <div className='flex justify-between'>
-            <p className='text-md font-semibold'>Return Wed, Dec 8</p>
+            <p className='text-md font-semibold'>{date}</p>
             <p className='text-gray-primary opacity-60'>2h 28m</p>
           </div>
           <div className='flex gap-10 sm:gap-28 items-center'>
             <div className='flex items-center justify-center py-4 px-8 gap-5 w-[262px] border border-brand-clr rounded-lg'>
               <Image
                 src={
-                  process.env.NEXT_PUBLIC_UPLOAD_URL +
-                  flight.attributes.logo?.data?.attributes?.url
+                  process.env.NEXT_PUBLIC_STRAPI_URL +
+                  flight.attributes.img?.data?.attributes?.url
                 }
                 width={64}
                 height={44}
@@ -97,18 +109,23 @@ const ViewDetails = ({ flight }) => {
               <MdOutlineAirlineSeatReclineExtra className='sm:text-4xl text-xl' />
             </div>
           </div>
-          <div className='flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-10 mt-6'>
+          <div className='flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-10 md:mt-6'>
             <p className='text-xl font-semibold'>
-              {flight?.attributes?.departure}
+              {flight?.attributes?.departure.slice(0, 5)}-
+              {flight?.attributes?.landing.slice(0, 5)}
             </p>
-            <p>{flight?.attributes?.cityFrom}</p>
+            <p>
+              {flight?.attributes?.from} - ({flight?.attributes?.codeFrom})
+            </p>
 
             <IoAirplane size={30} className='hidden sm:flex' />
 
             <p className='text-xl font-semibold'>
               {flight?.attributes?.arrival}
             </p>
-            <p>{flight?.attributes?.cityTo}</p>
+            <p>
+              {flight?.attributes?.to} - ({flight?.attributes?.codeTo})
+            </p>
           </div>
         </div>
         {user.token ? (
@@ -117,7 +134,7 @@ const ViewDetails = ({ flight }) => {
           <form
             className='bg-white rounded-lg shadow-lg p-6 gap-4 flex flex-col'
             onSubmit={handleSubmit}>
-            <h1 className='text-2xl font-semibold'>Login or Sign up to book</h1>
+            <h1 className='text-2xl font-semibold'>Login to make a booking</h1>
             <div className='flex gap-4 '>
               <input
                 type='email'
@@ -160,7 +177,7 @@ const ViewDetails = ({ flight }) => {
           </form>
         )}
       </div>
-      <div className='flex flex-col sm:w-[450px] mx-auto h-[469.5px] bg-white rounded-lg shadow-lg p-6  gap-6'>
+      <div className='flex flex-col sm:w-[450px] mx-auto h-full bg-white rounded-lg shadow-lg p-6  gap-6'>
         <div className='flex items-center gap-6'>
           <Image src='/img/plane.png' width={120} height={120} alt='Airplane' />
 

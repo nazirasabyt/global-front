@@ -16,8 +16,8 @@ const SearchForm = () => {
   };
 
   return (
-    <div className='absolute top-[140px] sm:top-[500px] bg-white  md:shadow-xl rounded-lg  py-6 px-10  w-full lg:w-[1282px] sm:mb-10'>
-      <div className='flex flex-wrap justify-start gap-x-4 mb-4 -ml-2'>
+    <div className=' bg-white  md:shadow-xl rounded-lg  py-6 px-10  sm:w-[80%] w-full mx-auto  -mt-10 sm:-mt-20'>
+      <div className='flex  gap-x-4 mb-4 -ml-2'>
         <div className='mx-1'>
           <input
             type='radio'

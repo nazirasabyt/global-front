@@ -23,7 +23,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className='flex justify-between items-center  py-6 px-6 sm:px-20 shadow-lg bg-white'>
+    <div className='flex justify-between items-center  py-6 px-6 shadow-lg bg-white'>
       {" "}
       <nav className='hidden font-semibold sm:flex flex-row gap-4'>
         <Link href='/' className='flex justify-center items-center'>

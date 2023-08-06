@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Flight from "./Flight";
 import { RxHamburgerMenu } from "react-icons/rx";
 
-const FilteredFlights = ({ flights }) => {
-  const data = flights.data;
+const FilteredFlights = ({ data }) => {
+  // useEffect(() => {
+  //   const data = localStorage.getItem("formData");
+  //   console.log(data);
+  // }, []);
 
   return (
     <div className='flex  flex-col w-[360px] sm:w-[800px] mx-auto'>
