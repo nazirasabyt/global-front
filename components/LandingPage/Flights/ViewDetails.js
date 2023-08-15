@@ -53,12 +53,12 @@ const ViewDetails = ({ flight }) => {
 
     try {
       const { data } = await axios.post(
-        `${process.env.NEXT_PUBLIC_STRAPI_URL}/auth/local`,
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/auth/local`,
         userData
       );
 
       if (data.jwt) {
-        toast.success("Login Successful!");
+        toast.success("Login Successful!", { hideProgressBar: true });
         authLogin(data);
       }
     } catch (err) {

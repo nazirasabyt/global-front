@@ -30,12 +30,12 @@ const Footer = () => {
   return (
     <footer className='relative mt-10'>
       <section className='w-full h-full relative'>
-        <div className='flex justify-between   mx-6  rounded-3xl  bg-[#CDEAE1]  inset-x-4'>
+        <div className='flex justify-between  mx-6  sm:mx-20  rounded-3xl  bg-[#CDEAE1]  inset-x-4'>
           <div className='flex flex-col px-6 sm:px-16 mb-4'>
             <h1 className='text-xl sm:text-3xl my-2 sm:my-6  font-semibold pt-2'>
               Subscribe Newsletter
             </h1>
-            <h3 className='text-sm sm:text-xl mb-2 '>The Travel</h3>
+            {/* <h3 className='text-sm sm:text-xl mb-2 '>The Travel</h3> */}
             <p className='text-xs sm:text-lg mb-4  text-[#112211]'>
               Get inspired! Receive travel discounts, tips and behind the scenes
               stories.
@@ -72,7 +72,7 @@ const Footer = () => {
           </div>
         </div>
         <div className='flex flex-col justify-center  mx-auto w-full  cursor-pointer bg-brand-clr mt-6'>
-          <div className='text-xs sm:text-lg flex p-4 mt-8 justify-evenly   sm:mx-16'>
+          <div className='text-xs sm:text-lg flex p-4 sm:mt-8 justify-evenly   sm:mx-6'>
             {" "}
             <div className=' flex flex-col gap-1 justify-center '>
               {" "}

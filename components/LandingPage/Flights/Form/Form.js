@@ -21,8 +21,6 @@ const Form = ({ trip }) => {
     to: false,
   });
 
-  console.log(trip);
-
   const [fromCitiesData, setFromCitiesData] = useState([]);
   const [toCitiesData, setToCitiesData] = useState([]);
 

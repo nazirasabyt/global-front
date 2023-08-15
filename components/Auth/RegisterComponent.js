@@ -43,13 +43,15 @@ const RegisterComponent = () => {
 
     try {
       const { data } = await axios.post(
-        `${process.env.NEXT_PUBLIC_STRAPI_URL}/auth/local/register`,
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/auth/local/register`,
         user
       );
-      console.log(data);
+
       if (data.jwt) {
         setLoading(false);
-        toast.success("Registration Successful!");
+        toast.success("Registration Successful!", {
+          hideProgressBar: true,
+        });
         router.push("/");
       }
     } catch (err) {

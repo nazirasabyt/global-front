@@ -31,7 +31,7 @@ const LoginComponent = () => {
 
     try {
       const { data } = await axios.post(
-        `${process.env.NEXT_PUBLIC_STRAPI_URL}/auth/local`,
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/auth/local`,
         user
       );
 

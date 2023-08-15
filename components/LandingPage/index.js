@@ -22,7 +22,7 @@ const LandingPage = () => {
           </div>
         </div>
 
-        <div className='bg-dimWhite flex justify-center items-center sm:px-16 px-6'>
+        <div className='bg-dimWhite flex flex-col justify-center items-center sm:px-16 px-6'>
           <div className={styles.boxWidth}>
             <SearchForm />
             <section className='flex flex-col my-10 '>
@@ -38,9 +38,9 @@ const LandingPage = () => {
               <div className='bg-section-map bg-contain sm:bg-cover bg-center mb-2  sm:mb-0 h-[220px] sm:h-[486px] w-full'></div>
             </section>
             <Travel />
-            <Footer />
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );
