@@ -4,7 +4,6 @@ import axios from "axios";
 import Navbar from "../../components/LandingPage/Navbar";
 
 const Flights = ({ flights }) => {
-  console.log(flights);
   return (
     <>
       <Navbar />

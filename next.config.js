@@ -14,9 +14,17 @@ const nextConfig = {
         port: "1337",
         pathname: "/uploads/**",
       },
+
       {
         protocol: "https",
         hostname: "https://strapi-bwxp.onrender.com",
+        port: "",
+        pathname: "/uploads/**",
+      },
+
+      {
+        protocol: "https",
+        hostname: "https://global-front-ds8f.vercel.app",
         port: "",
         pathname: "/uploads/**",
       },
