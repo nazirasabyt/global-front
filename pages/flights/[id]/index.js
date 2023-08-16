@@ -21,12 +21,7 @@ export async function getServerSideProps(context) {
   const id = context.params.id;
 
   const res = await axios.get(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/flights/${id}?populate=*`,
-    {
-      headers: {
-        Authorization: "bearer" + process.env.NEXT_APP_API_TOKEN,
-      },
-    }
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/flights/${id}?populate=*`
   );
 
   if (!res.data.data) {

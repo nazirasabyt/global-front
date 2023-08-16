@@ -44,21 +44,23 @@ const Navbar = () => {
       </Link>
       <div className='flex gap-2 text-xs sm:text-sm justify-center items-center'>
         {user.token ? (
-          <Link href='/profile'>My Profile</Link>
+          ""
         ) : (
-          <Link href='/login'>Login</Link>
+          <Link href='/login' className='hover:bg-brand-clr '>
+            Login
+          </Link>
         )}
 
         {user.token ? (
           <p
-            className='bg-black text-white rounded-lg py-2 px-6'
+            className='bg-black text-white rounded-lg py-2 px-6 hover:bg-brand-clr'
             onClick={handleLogout}>
             Logout
           </p>
         ) : (
           <Link
             href='/register'
-            className='bg-black text-white rounded-lg py-2 px-6'>
+            className='bg-black text-white rounded-lg py-2 px-6 hover:bg-brand-clr'>
             Sign-up
           </Link>
         )}
