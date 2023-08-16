@@ -63,7 +63,7 @@ const RegisterComponent = () => {
     }
   };
   return (
-    <div className=' w-full h-screen mx-auto flex flex-col px-10 '>
+    <div className=' w-full h-screen mx-auto flex flex-col sm:px-10 mt-10'>
       <h1 className='text-4xl font-semibold mb-4'>Sign up</h1>
       <p className='text-sm text-gray-primary '>
         Let’s get you all set up so you can access your personal account.

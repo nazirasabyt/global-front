@@ -46,7 +46,7 @@ const Flight = (data) => {
           return (
             <div
               key={item.id}
-              className='bg-white rounded-lg flex flex-col sm:flex-row py-6 px-4 gap-6 '>
+              className='bg-white rounded-lg flex flex-col sm:flex-row py-6 px-4 sm:px-8 gap-6 '>
               <div className='flex justify-center items-center'>
                 <Image
                   src={

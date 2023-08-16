@@ -17,7 +17,7 @@ const SearchForm = () => {
 
   return (
     <div className=' bg-white  md:shadow-xl rounded-lg  py-6 px-10  sm:w-[80%] w-full mx-auto  -mt-10 sm:-mt-20'>
-      <div className='flex  gap-x-4 mb-4 -ml-2'>
+      <div className='flex  sm:gap-x-4 mb-4 -ml-2'>
         <div className='mx-1'>
           <input
             type='radio'
@@ -34,7 +34,7 @@ const SearchForm = () => {
             One Way
           </label>
         </div>
-        <div className='border-r'></div>
+        {/* <div className='border-r'></div> */}
         <div className='mx-1'>
           <input
             type='radio'
